@@ -5,7 +5,11 @@ const app = express();
 // Cors for locahost
 const cors = require("cors");
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:4209"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:4209",
+  "https://ballr-dev.vercel.app",
+];
 
 app.use(
   cors({
@@ -21,7 +25,6 @@ app.use(
   })
 );
 
-
 // import dtenv
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
@@ -31,9 +34,8 @@ const PORT = process.env.PORT || 4000;
 // const cookieparser = require("cookie-parser");
 // app.use(cookieparser());
 
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
-
 
 app.use(express.json());
 
