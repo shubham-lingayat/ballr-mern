@@ -1,0 +1,68 @@
+A. Send OTP -> POST method
+
+url: http://localhost:4000/api/v1/sendotp
+
+{
+    "email":"shubham.lingayat@gladowl.com"
+}
+
+
+B. SignUp -> POST method
+
+url: http://localhost:4000/api/v1/signup
+
+{
+    "name":"Shubham Lingayat",
+    "email":"shubham.lingayat@gladowl.com",
+    "password":"1234",
+    "accountType":"Admin",
+    "contactNumber":9823960449,
+    "otp":"305955"
+}
+
+C. Login -> POST method
+
+url: http://localhost:4000/api/v1/login
+
+{
+    "email":"shubham.lingayat@gladowl.com",
+    "password":"1234"
+}
+    
+D. Create Booking -> POST method
+
+url: http://localhost:4000/api/v1/creatbooking
+
+{
+    "clientname": "Vaibhav Denge", 
+    "tablenumber": "A2", 
+    "clientcount": 10,
+    "clientcontact":9637319342,
+    "date":"2025-03-27"
+}
+
+E. Get Booking Details -> GET method
+
+url: http://localhost:4000/api/v1/bookings/2025-03-27
+
+{
+    "clientname": "Vaibhav Denge", 
+    "tablenumber": "A1", 
+    "clientcount": 10,
+    "clientcontact":9637319342,
+    "date":"2025-03-27"
+}
+
+F. Get all user data -> GET method
+
+url: /
+
+
+F. Delete any Entry -> (use the mongodb url)
+
+mongodb+srv://shubhlingayat2003:A66dvfjXUtX6Dv3x@ballrcluster.j2rx8up.mongodb.net/
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+accountType = ["Admin", "Pr"]
+tablenumber = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "D1", "D2", "D3"]
