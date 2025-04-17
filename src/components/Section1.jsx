@@ -34,6 +34,7 @@ const tableOptions = [
 ];
 
 function Section1() {
+  const url = process.env.REACT_APP_BASE_URL;
   const today = new Date();
   const [selectedDate, setSelectedDate] = useState(getFormattedDate(today));
   const [selectedTable, setSelectedTable] = useState("A1");
@@ -45,7 +46,7 @@ function Section1() {
     const fetchBookings = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/v1/bookings/${selectedDate}`
+          `{url}/bookings/${selectedDate}`
         );
         if (response.status !== 200) {
           toast.success("No Bookings Found or Error");

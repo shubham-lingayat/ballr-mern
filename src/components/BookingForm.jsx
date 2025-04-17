@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { UserContext } from "../App";
 
 const BookingForm = ({ date, tablenumber }) => {
+  
+  const url = process.env.REACT_APP_BASE_URL;
   const { user } = useContext(UserContext);
   const [formData, setFormData] = useState({
     clientname: "",
@@ -33,7 +35,7 @@ const BookingForm = ({ date, tablenumber }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/creatbooking",
+        `{url}/creatbooking`,
         payload
       );
       toast.success("Booking successful!");
